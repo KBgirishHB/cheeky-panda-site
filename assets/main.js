@@ -25,7 +25,21 @@
   if (gate) {
     body.style.overflow = 'hidden';
     if (reduced && gateVideo) { gateVideo.removeAttribute('autoplay'); gateVideo.pause(); }
-    else if (gateVideo) { var pl = gateVideo.play(); if (pl && pl.catch) pl.catch(function () {}); }
+    else if (gateVideo) {
+      // phones only autoplay a video that is muted + inline; set both in script as well as in the markup
+      gateVideo.muted = true; gateVideo.defaultMuted = true; gateVideo.loop = true;
+      gateVideo.setAttribute('muted', ''); gateVideo.setAttribute('playsinline', ''); gateVideo.setAttribute('webkit-playsinline', '');
+      var tryPlay = function () {
+        if (gate.classList.contains('is-leaving')) return;
+        var pl = gateVideo.play();
+        if (pl && pl.then) pl.then(function () { gateVideo.classList.remove('is-blocked'); },
+                                   function () { gateVideo.classList.add('is-blocked'); });   // blocked: show the logo, not a play button
+      };
+      tryPlay();
+      gateVideo.addEventListener('canplay', tryPlay);
+      ['touchstart', 'pointerdown', 'scroll'].forEach(function (ev) { gate.addEventListener(ev, tryPlay, { passive: true }); });
+      doc.addEventListener('visibilitychange', function () { if (!doc.hidden) tryPlay(); });
+    }
     $('#gate-enter').addEventListener('click', enterSite);
     $('#gate-enter').focus({ preventScroll: true });
     gate.addEventListener('keydown', function (e) { if (e.key === 'Escape') enterSite(); });

@@ -76,6 +76,8 @@ h2 em{color:var(--accent);font-weight:500}
 .gate__logo{height:min(46%,300px);width:auto}
 /* the clip has black bars baked in top and bottom: scale them out of frame */
 .gate__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
+.gate__video::-webkit-media-controls,.gate__video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
+.gate__video.is-blocked{visibility:hidden}
 .gate__bar{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;padding:clamp(18px,2.6vw,34px) var(--pad);border-top:1px solid rgba(243,239,230,.15)}
 .gate__name{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,64px);line-height:1;letter-spacing:-.02em;animation:gateIn .9s var(--ease) .1s both}
 .gate__name em{color:var(--verm);font-weight:500}
@@ -338,7 +340,7 @@ h2 em{color:var(--accent);font-weight:500}
 /* CURSOR */
 .cur-dot,.cur-ring{display:none}
 .has-cursor,.has-cursor *{cursor:none!important}
-.has-cursor .cur-dot,.has-cursor .cur-ring{display:grid;position:fixed;left:0;top:0;pointer-events:none;z-index:1400;border-radius:50%;place-items:center}
+.has-cursor .cur-dot,.has-cursor .cur-ring{display:grid;position:fixed;left:0;top:0;pointer-events:none;z-index:1600;border-radius:50%;place-items:center}
 .cur-dot{width:8px;height:8px;margin:-4px 0 0 -4px;background:#fff;mix-blend-mode:difference}
 .cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid var(--verm);transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s,opacity .3s}
 .cur-ring span{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--ink);opacity:0;transition:opacity .2s}

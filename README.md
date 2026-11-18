@@ -23,7 +23,7 @@ _headers              caching headers for Cloudflare Pages
 Things only the owner can confirm. Search `index.html` for the quoted text.
 
 1. **Final web address (important for SEO).** Every SEO URL assumes
-   `https://cheeky-panda-site.pages.dev/`. If your Cloudflare project gets a different
+   `https://cheeky-panda-site.girishgta6.workers.dev/`. If your Cloudflare project gets a different
    name, or you add a custom domain, find-and-replace that address in
    `index.html` (canonical, `og:url`, `og:image`, `twitter:image`, JSON-LD),
    `robots.txt` and `sitemap.xml`.
@@ -99,7 +99,7 @@ and the `assets`, `images` and `media` folders, then **Commit changes**.
    authorise GitHub → pick `cheeky-panda-site` → **Begin setup**.
 3. Build settings: Framework preset **None**, Build command **empty**,
    Build output directory **/** . → **Save and Deploy**.
-4. About a minute later the site is live at `https://cheeky-panda-site.pages.dev`
+4. About a minute later the site is live at `https://cheeky-panda-site.girishgta6.workers.dev`
    (if that name is taken Cloudflare adds a suffix — then do Manual Swap 1).
 5. Every later `git push` redeploys automatically. Old versions stay under
    **Deployments** for one-click rollback.

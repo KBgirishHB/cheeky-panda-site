@@ -1,0 +1,9 @@
+{
+  // Tells Cloudflare this project is a plain static site: serve the files in this folder.
+  "name": "cheeky-panda-site",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}

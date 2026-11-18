@@ -18,7 +18,7 @@
     body.classList.add('is-loaded');
     setTimeout(function () {
       gate.classList.add('is-gone');
-      if (gateVideo) { gateVideo.pause(); gateVideo.removeAttribute('src'); }
+      if (gateVideo) { gateVideo.pause(); gateVideo.removeAttribute('src'); gateVideo.load(); }
     }, reduced ? 0 : 950);
     var h1 = $('.hero__title'); if (h1) { h1.setAttribute('tabindex', '-1'); h1.focus({ preventScroll: true }); }
   }
@@ -27,6 +27,10 @@
     if (reduced && gateVideo) { gateVideo.removeAttribute('autoplay'); gateVideo.pause(); }
     else if (gateVideo) {
       // phones only autoplay a video that is muted + inline; set both in script as well as in the markup
+      // phones and slow connections get the lighter 480p file
+      var conn = navigator.connection || {};
+      var small = window.innerWidth <= 820 || conn.saveData || /2g|3g/.test(conn.effectiveType || '');
+      var videoSrc = gateVideo.getAttribute(small ? 'data-src-small' : 'data-src');
       gateVideo.muted = true; gateVideo.defaultMuted = true; gateVideo.loop = true;
       gateVideo.setAttribute('muted', ''); gateVideo.setAttribute('playsinline', ''); gateVideo.setAttribute('webkit-playsinline', '');
       var tryPlay = function () {
@@ -35,7 +39,12 @@
         if (pl && pl.then) pl.then(function () { gateVideo.classList.remove('is-blocked'); },
                                    function () { gateVideo.classList.add('is-blocked'); });   // blocked: show the logo, not a play button
       };
-      tryPlay();
+      // start the video only once the page itself has loaded, so it never delays the first paint
+      var startVideo = function () {
+        if (gateVideo.getAttribute('src') || gate.classList.contains('is-leaving')) return;
+        gateVideo.src = videoSrc; tryPlay();
+      };
+      if (doc.readyState === 'complete') startVideo(); else window.addEventListener('load', startVideo);
       gateVideo.addEventListener('canplay', tryPlay);
       ['touchstart', 'pointerdown', 'scroll'].forEach(function (ev) { gate.addEventListener(ev, tryPlay, { passive: true }); });
       doc.addEventListener('visibilitychange', function () { if (!doc.hidden) tryPlay(); });
@@ -92,6 +101,7 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.setAttribute('aria-hidden', String(!open));
+    menu.inert = !open;
     body.style.overflow = open ? 'hidden' : '';
     if (open) nav.classList.remove('is-hidden');
   }
@@ -232,6 +242,7 @@
   }
   function lbOpen(n) {
     lastFocus = doc.activeElement;
+    lb.inert = false;
     lb.classList.add('on'); lb.setAttribute('aria-hidden', 'false');
     body.style.overflow = 'hidden';
     lbShow(n);
@@ -239,6 +250,7 @@
   }
   function lbClose() {
     lb.classList.remove('on'); lb.setAttribute('aria-hidden', 'true');
+    lb.inert = true;
     body.style.overflow = '';
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
@@ -308,10 +320,13 @@
     var w = wm.getBoundingClientRect().width;
     if (w > 0) wm.style.fontSize = (100 * (root.clientWidth * 0.965) / w).toFixed(2) + 'px';
   }
-  fitWordmark();
-  window.addEventListener('resize', fitWordmark);
-  window.addEventListener('load', fitWordmark);
-  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(fitWordmark);
+  // measured only when the footer is near, so it costs nothing during page load
+  if (wm && 'IntersectionObserver' in window) {
+    var wo = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { fitWordmark(); window.addEventListener('resize', fitWordmark); wo.disconnect(); }
+    }, { rootMargin: '900px 0px' });
+    wo.observe(wm);
+  } else fitWordmark();
 
   /* ---------- custom cursor (desktop only) ---------- */
   if (finePointer) {

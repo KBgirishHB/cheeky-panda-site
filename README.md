@@ -9,7 +9,7 @@ assets/style.css      design system + layout
 assets/main.js        interactions (lightbox, cursor, accordion, …)
 assets/*.png          favicon and app icons made from the real logo (+ web manifest)
 media/                intro video shown on the landing screen until "Enter site"
-images/               photos, already resized (max 1600px, JPEG q80) and named for SEO
+images/               photos, already resized (max 1600px, WebP) and named for SEO
 robots.txt            search-engine rules
 sitemap.xml           page + image sitemap
 404.html              "Out of frame" page (used by Cloudflare Pages and GitHub Pages)
@@ -62,7 +62,7 @@ until the visitor clicks "Enter site".
 
 ### Replacing a photo
 
-Each gallery photo has two files: `name.jpg` (large, for the lightbox) and `name-800.jpg`
+Each gallery photo has two files: `name.webp` (large, for the lightbox) and `name-800.webp`
 (small, for the grid). Export your new photo at the same shape, save over both, done.
 
 ---

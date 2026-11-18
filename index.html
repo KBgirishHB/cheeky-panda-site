@@ -33,11 +33,9 @@
 <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 <link rel="manifest" href="./assets/site.webmanifest">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="./images/hero-couple-kanchipuram.jpg">
-<link rel="stylesheet" href="./assets/style.css?v=3">
+<link rel="preload" as="font" type="font/woff2" href="./assets/fonts/fraunces-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="./images/brand/cheeky-panda-logo.webp" type="image/webp">
+<link rel="stylesheet" href="./assets/style.css?v=5">
 <script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">
@@ -115,10 +113,8 @@
 <!-- LANDING GATE: intro video + logo + Enter button -->
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Welcome to Cheeky Panda Photography">
   <div class="gate__stage">
-    <img class="gate__logo" src="./images/brand/cheeky-panda-logo.png" width="275" height="480" alt="Cheeky Panda Photography logo">
-    <video class="gate__video" id="gate-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="./media/cheeky-panda-intro.mp4" type="video/mp4">
-    </video>
+    <img class="gate__logo" src="./images/brand/cheeky-panda-logo.webp" width="275" height="480" alt="Cheeky Panda Photography logo" fetchpriority="high">
+    <video class="gate__video" id="gate-video" muted loop playsinline preload="none" aria-hidden="true" data-src="./media/cheeky-panda-intro.mp4" data-src-small="./media/cheeky-panda-intro-480.mp4"></video>
     <button class="gate__sound" id="gate-sound" aria-pressed="false">Sound off</button>
   </div>
   <div class="gate__bar">
@@ -132,7 +128,7 @@
 
 <!-- NAV --><header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Cheeky Panda Photography — home">
-    <img class="brand__logo" src="./images/brand/cheeky-panda-logo-small.png" width="69" height="120" alt="">
+    <img class="brand__logo" src="./images/brand/cheeky-panda-logo-small.webp" width="69" height="120" alt="">
     <span class="brand__txt"><b>Cheeky Panda</b><small>Photography</small></span>
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -146,7 +142,7 @@
 </header>
 
 <!-- MOBILE MENU -->
-<div class="menu" id="menu" aria-hidden="true">
+<div class="menu" id="menu" aria-hidden="true" inert>
   <nav class="menu__links" aria-label="Mobile">
     <a href="#work"><small>01</small>Work</a>
     <a href="#services"><small>02</small>Services</a>
@@ -178,14 +174,14 @@
     <div class="collage" aria-label="Recent prints">
       <figure class="print print--tall" data-speed="-0.08">
         <div class="print__in">
-          <img src="./images/hero-couple-kanchipuram.jpg" width="1100" height="1375" alt="A couple in traditional Tamil wedding clothes sitting together and laughing — wedding photography by Cheeky Panda, Chennai" fetchpriority="high">
+          <img src="./images/hero-couple-kanchipuram-640.webp" srcset="./images/hero-couple-kanchipuram-640.webp 640w, ./images/hero-couple-kanchipuram.webp 1100w" sizes="(max-width:640px) 70vw, (max-width:820px) 50vw, 31vw" width="1100" height="1375" alt="A couple in traditional Tamil wedding clothes sitting together and laughing — wedding photography by Cheeky Panda, Chennai" loading="lazy">
           <figcaption>Divya &amp; Karthik — Kanchipuram, 5:12 AM</figcaption>
         </div>
       </figure>
       <figure class="print print--small" data-speed="-0.16">
         <div class="print__in">
           <span class="tape"></span>
-          <img src="./images/hero-backstage-mid-laugh.jpg" width="900" height="600" alt="A model smiling backstage at a Chennai fashion event">
+          <img src="./images/hero-backstage-mid-laugh.webp" width="900" height="600" alt="A model smiling backstage at a Chennai fashion event">
           <figcaption>backstage, mid-laugh</figcaption>
         </div>
       </figure>
@@ -238,74 +234,74 @@
 
   <div class="gallery" id="gallery">
     <figure class="shot g1" style="--ar:4/5">
-      <a class="ph" href="./images/silk-knot-wedding-kanchipuram.jpg" data-title="The Silk Knot" data-place="Wedding · Kanchipuram">
-        <img src="./images/silk-knot-wedding-kanchipuram-800.jpg" srcset="./images/silk-knot-wedding-kanchipuram-800.jpg 800w, ./images/silk-knot-wedding-kanchipuram.jpg 1440w" sizes="(min-width:1000px) 40vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Bride in a red and green silk saree holding a basket of flowers — wedding photography in Chennai">
+      <a class="ph" href="./images/silk-knot-wedding-kanchipuram.webp" data-title="The Silk Knot" data-place="Wedding · Kanchipuram">
+        <img src="./images/silk-knot-wedding-kanchipuram-800.webp" srcset="./images/silk-knot-wedding-kanchipuram-800.webp 800w, ./images/silk-knot-wedding-kanchipuram.webp 1440w" sizes="(min-width:1000px) 40vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Bride in a red and green silk saree holding a basket of flowers — wedding photography in Chennai">
       </a>
       <figcaption><i>Nº 01 — The Silk Knot</i><span>Wedding · Kanchipuram</span></figcaption>
     </figure>
     <figure class="shot g2" style="--ar:3/2">
-      <a class="ph" href="./images/marina-dawn-couple-marina-beach.jpg" data-title="Marina Dawn" data-place="Couple · Marina Beach">
-        <img src="./images/marina-dawn-couple-marina-beach-800.jpg" srcset="./images/marina-dawn-couple-marina-beach-800.jpg 800w, ./images/marina-dawn-couple-marina-beach.jpg 1600w" sizes="(min-width:1000px) 48vw, (min-width:640px) 48vw, 92vw" width="800" height="533" loading="lazy" alt="Man in a suit walking across the chequered Napier Bridge at sunrise near Marina Beach, Chennai">
+      <a class="ph" href="./images/marina-dawn-couple-marina-beach.webp" data-title="Marina Dawn" data-place="Couple · Marina Beach">
+        <img src="./images/marina-dawn-couple-marina-beach-800.webp" srcset="./images/marina-dawn-couple-marina-beach-800.webp 800w, ./images/marina-dawn-couple-marina-beach.webp 1600w" sizes="(min-width:1000px) 48vw, (min-width:640px) 48vw, 92vw" width="800" height="533" loading="lazy" alt="Man in a suit walking across the chequered Napier Bridge at sunrise near Marina Beach, Chennai">
       </a>
       <figcaption><i>Nº 02 — Marina Dawn</i><span>Couple · Marina Beach</span></figcaption>
     </figure>
     <figure class="shot g3" style="--ar:1/1">
-      <a class="ph" href="./images/half-saree-full-drama-mylapore.jpg" data-title="Half-Saree, Full Drama" data-place="Family · Mylapore">
-        <img src="./images/half-saree-full-drama-mylapore-800.jpg" srcset="./images/half-saree-full-drama-mylapore-800.jpg 800w, ./images/half-saree-full-drama-mylapore.jpg 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="800" loading="lazy" alt="Woman in a green and gold half-saree posing on a quiet Chennai street">
+      <a class="ph" href="./images/half-saree-full-drama-mylapore.webp" data-title="Half-Saree, Full Drama" data-place="Family · Mylapore">
+        <img src="./images/half-saree-full-drama-mylapore-800.webp" srcset="./images/half-saree-full-drama-mylapore-800.webp 800w, ./images/half-saree-full-drama-mylapore.webp 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="800" loading="lazy" alt="Woman in a green and gold half-saree posing on a quiet Chennai street">
       </a>
       <figcaption><i>Nº 03 — Half-Saree, Full Drama</i><span>Family · Mylapore</span></figcaption>
     </figure>
     <figure class="shot g4" style="--ar:3/4">
-      <a class="ph" href="./images/neon-bazaar-editorial-t-nagar.jpg" data-title="Neon Bazaar" data-place="Editorial · T. Nagar">
-        <img src="./images/neon-bazaar-editorial-t-nagar-800.jpg" srcset="./images/neon-bazaar-editorial-t-nagar-800.jpg 800w, ./images/neon-bazaar-editorial-t-nagar.jpg 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Fashion model on a runway under neon stage lights — editorial photography in Chennai">
+      <a class="ph" href="./images/neon-bazaar-editorial-t-nagar.webp" data-title="Neon Bazaar" data-place="Editorial · T. Nagar">
+        <img src="./images/neon-bazaar-editorial-t-nagar-800.webp" srcset="./images/neon-bazaar-editorial-t-nagar-800.webp 800w, ./images/neon-bazaar-editorial-t-nagar.webp 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Fashion model on a runway under neon stage lights — editorial photography in Chennai">
       </a>
       <figcaption><i>Nº 04 — Neon Bazaar</i><span>Editorial · T. Nagar</span></figcaption>
     </figure>
     <figure class="shot g5" style="--ar:16/10">
-      <a class="ph" href="./images/monsoon-mirth-portrait-besant-nagar.jpg" data-title="Monsoon Mirth" data-place="Portrait · Besant Nagar">
-        <img src="./images/monsoon-mirth-portrait-besant-nagar-800.jpg" srcset="./images/monsoon-mirth-portrait-besant-nagar-800.jpg 800w, ./images/monsoon-mirth-portrait-besant-nagar.jpg 1600w" sizes="(min-width:1000px) 56vw, (min-width:640px) 48vw, 92vw" width="800" height="500" loading="lazy" alt="Close-up portrait of a bride with traditional jewellery, eyes lowered — portrait photography Chennai">
+      <a class="ph" href="./images/monsoon-mirth-portrait-besant-nagar.webp" data-title="Monsoon Mirth" data-place="Portrait · Besant Nagar">
+        <img src="./images/monsoon-mirth-portrait-besant-nagar-800.webp" srcset="./images/monsoon-mirth-portrait-besant-nagar-800.webp 800w, ./images/monsoon-mirth-portrait-besant-nagar.webp 1600w" sizes="(min-width:1000px) 56vw, (min-width:640px) 48vw, 92vw" width="800" height="500" loading="lazy" alt="Close-up portrait of a bride with traditional jewellery, eyes lowered — portrait photography Chennai">
       </a>
       <figcaption><i>Nº 05 — Monsoon Mirth</i><span>Portrait · Besant Nagar</span></figcaption>
     </figure>
     <figure class="shot g6" style="--ar:4/5">
-      <a class="ph" href="./images/little-rascal-adyar.jpg" data-title="Little Rascal" data-place="Outdoor · Adyar">
-        <img src="./images/little-rascal-adyar-800.jpg" srcset="./images/little-rascal-adyar-800.jpg 800w, ./images/little-rascal-adyar.jpg 1080w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Woman in a cap and denim standing by the water with hills behind — outdoor portrait shoot">
+      <a class="ph" href="./images/little-rascal-adyar.webp" data-title="Little Rascal" data-place="Outdoor · Adyar">
+        <img src="./images/little-rascal-adyar-800.webp" srcset="./images/little-rascal-adyar-800.webp 800w, ./images/little-rascal-adyar.webp 1080w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Woman in a cap and denim standing by the water with hills behind — outdoor portrait shoot">
       </a>
       <figcaption><i>Nº 06 — Little Rascal</i><span>Outdoor · Adyar</span></figcaption>
     </figure>
     <figure class="shot g7" style="--ar:1/1">
-      <a class="ph" href="./images/studio-riot-in-studio.jpg" data-title="Studio Riot" data-place="Dance · In Studio">
-        <img src="./images/studio-riot-in-studio-800.jpg" srcset="./images/studio-riot-in-studio-800.jpg 800w, ./images/studio-riot-in-studio.jpg 1450w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="800" loading="lazy" alt="Classical dancer in a red saree seated against a deep blue studio backdrop">
+      <a class="ph" href="./images/studio-riot-in-studio.webp" data-title="Studio Riot" data-place="Dance · In Studio">
+        <img src="./images/studio-riot-in-studio-800.webp" srcset="./images/studio-riot-in-studio-800.webp 800w, ./images/studio-riot-in-studio.webp 1450w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="800" loading="lazy" alt="Classical dancer in a red saree seated against a deep blue studio backdrop">
       </a>
       <figcaption><i>Nº 07 — Studio Riot</i><span>Dance · In Studio</span></figcaption>
     </figure>
     <figure class="shot g8" style="--ar:4/3">
-      <a class="ph" href="./images/long-table-celebration-ecr.jpg" data-title="The Long Table" data-place="Celebration · ECR">
-        <img src="./images/long-table-celebration-ecr-800.jpg" srcset="./images/long-table-celebration-ecr-800.jpg 800w, ./images/long-table-celebration-ecr.jpg 1366w" sizes="(min-width:1000px) 40vw, (min-width:640px) 48vw, 92vw" width="800" height="600" loading="lazy" alt="Couple in traditional white and green outfits laughing together on stone steps">
+      <a class="ph" href="./images/long-table-celebration-ecr.webp" data-title="The Long Table" data-place="Celebration · ECR">
+        <img src="./images/long-table-celebration-ecr-800.webp" srcset="./images/long-table-celebration-ecr-800.webp 800w, ./images/long-table-celebration-ecr.webp 1366w" sizes="(min-width:1000px) 40vw, (min-width:640px) 48vw, 92vw" width="800" height="600" loading="lazy" alt="Couple in traditional white and green outfits laughing together on stone steps">
       </a>
       <figcaption><i>Nº 08 — The Long Table</i><span>Celebration · ECR</span></figcaption>
     </figure>
     <figure class="shot g9" style="--ar:2/3">
-      <a class="ph" href="./images/gold-hour-portrait-chennai.jpg" data-title="Gold Hour" data-place="Portrait · Chennai">
-        <img src="./images/gold-hour-portrait-chennai-800.jpg" srcset="./images/gold-hour-portrait-chennai-800.jpg 800w, ./images/gold-hour-portrait-chennai.jpg 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1200" loading="lazy" alt="Woman in a mint dress under warm golden fairy lights — portrait photography Chennai">
+      <a class="ph" href="./images/gold-hour-portrait-chennai.webp" data-title="Gold Hour" data-place="Portrait · Chennai">
+        <img src="./images/gold-hour-portrait-chennai-800.webp" srcset="./images/gold-hour-portrait-chennai-800.webp 800w, ./images/gold-hour-portrait-chennai.webp 1600w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1200" loading="lazy" alt="Woman in a mint dress under warm golden fairy lights — portrait photography Chennai">
       </a>
       <figcaption><i>Nº 09 — Gold Hour</i><span>Portrait · Chennai</span></figcaption>
     </figure>
     <figure class="shot g10" style="--ar:3/4">
-      <a class="ph" href="./images/veshti-season-portrait-chennai.jpg" data-title="Veshti Season" data-place="Portrait · Chennai">
-        <img src="./images/veshti-season-portrait-chennai-800.jpg" srcset="./images/veshti-season-portrait-chennai-800.jpg 800w, ./images/veshti-season-portrait-chennai.jpg 1600w" sizes="(min-width:1000px) 24vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Man in a cream shirt and veshti beside lit wall lamps — men's portrait photography">
+      <a class="ph" href="./images/veshti-season-portrait-chennai.webp" data-title="Veshti Season" data-place="Portrait · Chennai">
+        <img src="./images/veshti-season-portrait-chennai-800.webp" srcset="./images/veshti-season-portrait-chennai-800.webp 800w, ./images/veshti-season-portrait-chennai.webp 1600w" sizes="(min-width:1000px) 24vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Man in a cream shirt and veshti beside lit wall lamps — men's portrait photography">
       </a>
       <figcaption><i>Nº 10 — Veshti Season</i><span>Portrait · Chennai</span></figcaption>
     </figure>
     <figure class="shot g11" style="--ar:4/5">
-      <a class="ph" href="./images/pyramid-scheme-concept-shoot.jpg" data-title="Pyramid Scheme" data-place="Concept · Composite">
-        <img src="./images/pyramid-scheme-concept-shoot-800.jpg" srcset="./images/pyramid-scheme-concept-shoot-800.jpg 800w, ./images/pyramid-scheme-concept-shoot.jpg 1584w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Concept shoot of a model styled as an Egyptian queen in front of pyramids">
+      <a class="ph" href="./images/pyramid-scheme-concept-shoot.webp" data-title="Pyramid Scheme" data-place="Concept · Composite">
+        <img src="./images/pyramid-scheme-concept-shoot-800.webp" srcset="./images/pyramid-scheme-concept-shoot-800.webp 800w, ./images/pyramid-scheme-concept-shoot.webp 1584w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1000" loading="lazy" alt="Concept shoot of a model styled as an Egyptian queen in front of pyramids">
       </a>
       <figcaption><i>Nº 11 — Pyramid Scheme</i><span>Concept · Composite</span></figcaption>
     </figure>
     <figure class="shot g12" style="--ar:3/4">
-      <a class="ph" href="./images/braid-runner-editorial-studio.jpg" data-title="Braid Runner" data-place="Editorial · In Studio">
-        <img src="./images/braid-runner-editorial-studio-800.jpg" srcset="./images/braid-runner-editorial-studio-800.jpg 800w, ./images/braid-runner-editorial-studio.jpg 1350w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Model mid-dance in a black dress with a flying braid in a white studio — fashion editorial">
+      <a class="ph" href="./images/braid-runner-editorial-studio.webp" data-title="Braid Runner" data-place="Editorial · In Studio">
+        <img src="./images/braid-runner-editorial-studio-800.webp" srcset="./images/braid-runner-editorial-studio-800.webp 800w, ./images/braid-runner-editorial-studio.webp 1350w" sizes="(min-width:1000px) 32vw, (min-width:640px) 48vw, 92vw" width="800" height="1067" loading="lazy" alt="Model mid-dance in a black dress with a flying braid in a white studio — fashion editorial">
       </a>
       <figcaption><i>Nº 12 — Braid Runner</i><span>Editorial · In Studio</span></figcaption>
     </figure>
@@ -325,7 +321,7 @@
   </div>
 
   <div class="index" id="services-list">
-    <article class="row is-open reveal" data-preview="./images/silk-knot-wedding-kanchipuram-800.jpg">
+    <article class="row is-open reveal" data-preview="./images/silk-knot-wedding-kanchipuram-800.webp">
       <h3><button class="row__head" aria-expanded="true" aria-controls="svc-1" id="svc-1-h">
         <span class="row__num">01</span><span class="row__title">Weddings &amp; Receptions</span><span class="row__price">from ₹75,000</span><span class="row__plus"><svg><use href="#i-plus"/></svg></span>
       </button></h3>
@@ -335,7 +331,7 @@
         <a class="btn btn--ink" href="#booking">Book this shoot <svg class="ico"><use href="#i-ne"/></svg></a></div>
       </div></div></div>
     </article>
-    <article class="row reveal" data-preview="./images/monsoon-mirth-portrait-besant-nagar-800.jpg">
+    <article class="row reveal" data-preview="./images/monsoon-mirth-portrait-besant-nagar-800.webp">
       <h3><button class="row__head" aria-expanded="false" aria-controls="svc-2" id="svc-2-h">
         <span class="row__num">02</span><span class="row__title">Portraits &amp; Couple Shoots</span><span class="row__price">from ₹12,000</span><span class="row__plus"><svg><use href="#i-plus"/></svg></span>
       </button></h3>
@@ -345,7 +341,7 @@
         <a class="btn btn--ink" href="#booking">Book this shoot <svg class="ico"><use href="#i-ne"/></svg></a></div>
       </div></div></div>
     </article>
-    <article class="row reveal" data-preview="./images/half-saree-full-drama-mylapore-800.jpg">
+    <article class="row reveal" data-preview="./images/half-saree-full-drama-mylapore-800.webp">
       <h3><button class="row__head" aria-expanded="false" aria-controls="svc-3" id="svc-3-h">
         <span class="row__num">03</span><span class="row__title">Newborn &amp; Family</span><span class="row__price">from ₹18,000</span><span class="row__plus"><svg><use href="#i-plus"/></svg></span>
       </button></h3>
@@ -355,7 +351,7 @@
         <a class="btn btn--ink" href="#booking">Book this shoot <svg class="ico"><use href="#i-ne"/></svg></a></div>
       </div></div></div>
     </article>
-    <article class="row reveal" data-preview="./images/neon-bazaar-editorial-t-nagar-800.jpg">
+    <article class="row reveal" data-preview="./images/neon-bazaar-editorial-t-nagar-800.webp">
       <h3><button class="row__head" aria-expanded="false" aria-controls="svc-4" id="svc-4-h">
         <span class="row__num">04</span><span class="row__title">Fashion &amp; Editorial</span><span class="row__price">from ₹25,000</span><span class="row__plus"><svg><use href="#i-plus"/></svg></span>
       </button></h3>
@@ -365,7 +361,7 @@
         <a class="btn btn--ink" href="#booking">Book this shoot <svg class="ico"><use href="#i-ne"/></svg></a></div>
       </div></div></div>
     </article>
-    <article class="row reveal" data-preview="./images/long-table-celebration-ecr-800.jpg">
+    <article class="row reveal" data-preview="./images/long-table-celebration-ecr-800.webp">
       <h3><button class="row__head" aria-expanded="false" aria-controls="svc-5" id="svc-5-h">
         <span class="row__num">05</span><span class="row__title">Events &amp; Celebrations</span><span class="row__price">from ₹20,000</span><span class="row__plus"><svg><use href="#i-plus"/></svg></span>
       </button></h3>
@@ -384,14 +380,14 @@
     <div class="studio__pics reveal">
       <figure class="print print--about" data-speed="-0.04">
         <div class="print__in">
-          <img src="./images/studio-founders-cheeky-panda.jpg" width="1200" height="900" loading="lazy" alt="HB Bharath and HB Girish, founders of Cheeky Panda Photography, laughing in a selfie">
+          <img src="./images/studio-founders-cheeky-panda.webp" width="1200" height="900" loading="lazy" alt="HB Bharath and HB Girish, founders of Cheeky Panda Photography, laughing in a selfie">
           <figcaption>The pandas in chief — mid-laugh, as usual</figcaption>
         </div>
       </figure>
       <figure class="print print--studio" data-speed="-0.1">
         <div class="print__in">
           <span class="tape"></span>
-          <img src="./images/adyar-studio-portrait-session.jpg" width="800" height="800" loading="lazy" alt="Studio portrait session — woman in a yellow saree against a dark textured backdrop">
+          <img src="./images/adyar-studio-portrait-session.webp" width="800" height="800" loading="lazy" alt="Studio portrait session — woman in a yellow saree against a dark textured backdrop">
           <figcaption>the Adyar studio</figcaption>
         </div>
       </figure>
@@ -408,10 +404,10 @@
   </div>
 
   <dl class="stats hair-t hair-b" id="stats">
-    <div class="reveal"><dd><span data-count="7">7</span>+</dd><dt>Years shooting</dt></div>
-    <div class="reveal"><dd><span data-count="400">400</span>+</dd><dt>Shoots delivered</dt></div>
-    <div class="reveal"><dd><span data-count="15000">15,000</span>+</dd><dt>Photos edited</dt></div>
-    <div class="reveal"><dd>∞</dd><dt>Filter coffees (est.)</dt></div>
+    <div class="reveal"><dt>Years shooting</dt><dd><span data-count="7">7</span>+</dd></div>
+    <div class="reveal"><dt>Shoots delivered</dt><dd><span data-count="400">400</span>+</dd></div>
+    <div class="reveal"><dt>Photos edited</dt><dd><span data-count="15000">15,000</span>+</dd></div>
+    <div class="reveal"><dt>Filter coffees (est.)</dt><dd>∞</dd></div>
   </dl>
 </section>
 
@@ -532,7 +528,7 @@
 <button class="totop round" id="totop" aria-label="Back to top"><svg><use href="#i-up"/></svg></button>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true" inert>
   <button class="round lb__close" id="lb-close" aria-label="Close"><svg><use href="#i-x"/></svg></button>
   <button class="round lb__prev" id="lb-prev" aria-label="Previous photo"><svg><use href="#i-left"/></svg></button>
   <button class="round lb__next" id="lb-next" aria-label="Next photo"><svg><use href="#i-right"/></svg></button>
@@ -547,6 +543,6 @@
 <div class="cur-dot" id="cur-dot" aria-hidden="true"></div>
 <div class="cur-ring" id="cur-ring" aria-hidden="true"><span>VIEW</span></div>
 
-<script src="./assets/main.js?v=3" defer></script>
+<script src="./assets/main.js?v=5" defer></script>
 </body>
 </html>

@@ -1,3 +1,15 @@
+/* self-hosted fonts (no third-party request) */
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 400 700; font-display: swap; src: url(./fonts/fraunces-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(./fonts/fraunces-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400; font-display: swap; src: url(./fonts/space-grotesk-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400; font-display: swap; src: url(./fonts/space-grotesk-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(./fonts/space-grotesk-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(./fonts/space-grotesk-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url(./fonts/space-grotesk-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url(./fonts/space-grotesk-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url(./fonts/space-grotesk-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url(./fonts/space-grotesk-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* Cheeky Panda Photography — three flat colours, no gradients */
 :root{
   --ink:#12100D; --bone:#F3EFE6; --verm:#E8542C;
@@ -22,7 +34,7 @@ section[id],footer[id]{scroll-margin-top:0}
 
 .dark{--bg:var(--ink);--fg:var(--bone);--line:rgba(243,239,230,.15);--muted:rgba(243,239,230,.62);--accent:var(--verm)}
 .light{--bg:var(--bone);--fg:var(--ink);--line:rgba(18,16,13,.15);--muted:rgba(18,16,13,.64);--accent:var(--verm)}
-.verm{--bg:var(--verm);--fg:var(--ink);--line:rgba(18,16,13,.22);--muted:rgba(18,16,13,.78);--accent:var(--ink)}
+.verm{--bg:var(--verm);--fg:var(--ink);--line:rgba(18,16,13,.22);--muted:rgba(18,16,13,.92);--accent:var(--ink)}
 .dark,.light,.verm{background:var(--bg);color:var(--fg)}
 .hair-t{border-top:1px solid var(--line)}
 .hair-b{border-bottom:1px solid var(--line)}
@@ -72,19 +84,20 @@ h2 em{color:var(--accent);font-weight:500}
 .js .gate{position:fixed;inset:0;z-index:1500;background:var(--ink);color:var(--bone);display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden;clip-path:circle(150% at 50% 50%)}
 .js .gate.is-leaving{clip-path:circle(0% at 50% 50%);transition:clip-path .9s var(--ease-io);pointer-events:none}
 .js .gate.is-gone{display:none}
-.gate__stage{position:relative;overflow:hidden;display:grid;place-items:center;min-height:0}
+/* stage fills the screen and the bar floats over its bottom edge, so nothing moves when fonts arrive */
+.gate__stage{position:absolute;inset:0;overflow:hidden;display:grid;place-items:center}
 .gate__logo{height:min(46%,300px);width:auto}
 /* the clip has black bars baked in top and bottom: scale them out of frame */
 .gate__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
 .gate__video::-webkit-media-controls,.gate__video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
 .gate__video.is-blocked{visibility:hidden}
-.gate__bar{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;padding:clamp(18px,2.6vw,34px) var(--pad);border-top:1px solid rgba(243,239,230,.15)}
-.gate__name{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,64px);line-height:1;letter-spacing:-.02em;animation:gateIn .9s var(--ease) .1s both}
+.gate__bar{position:absolute;left:0;right:0;bottom:0;background:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;padding:clamp(18px,2.6vw,34px) var(--pad);border-top:1px solid rgba(243,239,230,.15)}
+.gate__name{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,64px);line-height:1;letter-spacing:-.02em}
 .gate__name em{color:var(--verm);font-weight:500}
 .gate__txt{margin-top:10px;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;opacity:.7;animation:gateIn .9s var(--ease) .2s both}
 .gate__enter{padding:20px 34px;font-size:13.5px;animation:gateIn .9s var(--ease) .3s both}
 .gate__enter:hover .ico{transform:translateX(5px)}
-.gate__sound{position:absolute;right:18px;bottom:16px;z-index:1;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--bone);border-radius:999px;padding:10px 16px;transition:background .3s,color .3s}
+.gate__sound{position:absolute;right:18px;top:16px;z-index:1;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--bone);border-radius:999px;padding:10px 16px;transition:background .3s,color .3s}
 .gate__sound:hover{background:var(--verm);color:var(--ink)}
 @keyframes gateIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media (max-width:640px){.gate__bar{flex-direction:column;align-items:stretch;text-align:center}.gate__enter{justify-content:center}}
@@ -225,7 +238,8 @@ h2 em{color:var(--accent);font-weight:500}
 .row__plus{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .45s var(--ease),background .3s,color .3s,border-color .3s}
 .row__plus svg{width:20px;height:20px}
 .row__head:hover .row__title{transform:translateX(10px)}
-.row__head:hover .row__num,.row.is-open .row__num{color:var(--verm)}
+.row__head:hover .row__num{color:var(--verm)}
+.row.is-open .row__num{color:var(--ink);font-weight:700}
 .row.is-open .row__plus{transform:rotate(45deg);background:var(--ink);color:var(--bone);border-color:var(--ink)}
 .row__panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
 .row.is-open .row__panel{grid-template-rows:1fr}
@@ -372,6 +386,10 @@ h2 em{color:var(--accent);font-weight:500}
   .hero__title{font-size:17.5vw}
   .collage{width:52%;margin:0 7% 0 auto}
   .print--small{left:-30%}
+}
+/* touch devices: keep the grain but stop animating a huge layer (saves battery and scroll jank) */
+@media (hover:none),(max-width:820px){
+  body::after{animation:none;inset:0}
 }
 /* MOBILE */
 @media (max-width:640px){
